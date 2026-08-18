@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * The number of minutes it takes to cook a lasagna in the oven.
+ * The number of minutes it takes to bake a lasagna in the oven.
  */
 export const EXPECTED_MINUTES_IN_OVEN = 40;
 
