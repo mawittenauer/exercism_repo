@@ -1,6 +1,15 @@
+"""Functions used in preparing Guido's gorgeous lasagna.
+
+Learn about Guido, the creator of the Python language:
+https://en.wikipedia.org/wiki/Guido_van_Rossum
+
+This is a module docstring, used to describe the functionality
+of a module and its functions and/or classes.
+"""
+
+
 #TODO (student): define your EXPECTED_BAKE_TIME (required) and PREPARATION_TIME (optional) constants below.
-EXPECTED_BAKE_TIME = 40
-PREPERATION_TIME = 2
+EXPECTED_BAKE_TIME=40
 
 #TODO (student): Remove 'pass' and complete the 'bake_time_remaining()' function below.
 def bake_time_remaining(elapsed_bake_time):
@@ -17,7 +26,7 @@ def bake_time_remaining(elapsed_bake_time):
     based on the `EXPECTED_BAKE_TIME`.
     """
 
-    return EXPECTED_BAKE_TIME - elapsed_bake_time
+    return EXPECTED_BAKE_TIME - elapsed_bake_time;
 
 
 #TODO (student): Define the 'preparation_time_in_minutes()' function below.
@@ -25,38 +34,32 @@ def bake_time_remaining(elapsed_bake_time):
 # You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
 # This will make it easier to do calculations, and make changes to your code.
 def preparation_time_in_minutes(layers):
-    """Calculate the preparation time in minutes.
+    """Calculate the time it takes to prep the lasagna
 
     Parameters:
-        layers (int): Number of layers in the lasagna.
+        layers (int): the number of layers in the lasagna
 
     Returns:
-        int: the number of minutes it takes to prepare the amount of layers specified.
+        int: The number of minutes it takes to prep the lasagna
 
-    Function that takes the layers in the lasagna as
-    an argument and returns how many minutes the lasagna takes to prepare.
+    Function that takes the number of layers in the lasagna and returns how many minutes
+    it takes to prep the lasagna for baking
     """
-    
-    return layers * PREPERATION_TIME
+
+    return layers * 2;
 
 
 #TODO (student): define the 'elapsed_time_in_minutes()' function below.
-def elapsed_time_in_minutes(layers, elapsed_bake_time):
-    """Calculate the total elapsed time in minutes.
+def elapsed_time_in_minutes(layers, time_in_oven):
+    """Calculate the elapsed time in minutes for prepping and baking the lasagna
 
-    parameters:
-        layers (int): Number of layers in the lasagna.
-        elapsed_bake_time (int): The total number of minutes the lasagna has been in the oven.
+    Parameters:
+        layers (int): the number of layers in the lasagna
+        time_in_oven (int): Elapsed time that the lasagna has been in the oven
 
-    Returns:
-        int: The total elapsed time in minutes
-
-    Function that takes the layers in the lasagna and elapsed backing time as arguments
-    and returns how many minutes have elapsed since prep of the lasagna began.
+    Function that takes the number of layers and time that the lasagna has already been in the oven
+    and returns the total minutes
     """
-    
-    return preparation_time_in_minutes(layers) + elapsed_bake_time
 
+    return preparation_time_in_minutes(layers) + time_in_oven;
 
-# TODO (student): Remember to go back and add docstrings to all your functions
-#  (you can copy and then alter the one from bake_time_remaining.)
