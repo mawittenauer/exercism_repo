@@ -13,7 +13,7 @@ def eat_ghost(power_pellet_active, touching_ghost):
 
     """
 
-    return power_pellet_active & touching_ghost
+    return power_pellet_active and touching_ghost;
 
 
 def score(touching_power_pellet, touching_dot):
@@ -28,7 +28,7 @@ def score(touching_power_pellet, touching_dot):
 
     """
 
-    return touching_power_pellet | touching_dot
+    return touching_power_pellet or touching_dot;
 
 
 def lose(power_pellet_active, touching_ghost):
@@ -42,7 +42,7 @@ def lose(power_pellet_active, touching_ghost):
         bool: Has the player lost the game?
     """
 
-    return power_pellet_active == False & touching_ghost
+    return power_pellet_active == False and touching_ghost;
 
 
 def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
@@ -57,12 +57,4 @@ def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
         bool: Has the player won the game?
     """
 
-    if has_eaten_all_dots == True and touching_ghost == False:
-        return True
-    elif has_eaten_all_dots == True and touching_ghost == True and power_pellet_active == True:
-        return True
-    elif has_eaten_all_dots == True and touching_ghost == False and power_pellet_active == False:
-        return True
-    else:
-        return False
-    
+    return has_eaten_all_dots and ((power_pellet_active and touching_ghost == True) or (power_pellet_active == False and touching_ghost == False));
