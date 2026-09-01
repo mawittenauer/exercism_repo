@@ -32,7 +32,7 @@ export function daysInBudget(budget, ratePerHour) {
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
   const regDays = numDays % 22;
   const discDays = numDays - regDays;
-  const regRate = regDays * dayRate(ratePerHour);
-  const discRate = discDays * dayRate(ratePerHour * (1 - discount));
+  const regRate = dayRate(ratePerHour) * regDays;
+  const discRate = dayRate(ratePerHour * (1 - discount)) * discDays;
   return Math.ceil(regRate + discRate);
 }
