@@ -1,3 +1,10 @@
+"""Functions for calculating steps in exchanging currency.
+
+Python numbers documentation: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+
+Overview of exchanging currency when travelling: https://www.compareremit.com/money-transfer-tips/guide-to-exchanging-currency-for-overseas-travel/
+"""
+
 def exchange_money(budget, exchange_rate):
     """Calculate estimated value after exchange.
 
@@ -93,7 +100,7 @@ def get_number_of_bills(amount, denomination):
 
     """
 
-    return amount // denomination
+    return int(amount / denomination)
 
 
 def get_leftover_of_bills(amount, denomination):
@@ -118,7 +125,7 @@ def get_leftover_of_bills(amount, denomination):
 
     """
 
-    return amount % denomination;
+    return amount % denomination
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):
@@ -147,13 +154,10 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     determining the exchange rate plus the spread.
     """
 
-    # 1. Adjust exchange rate to include the spread fee
     actual_rate = exchange_rate * (1 + spread / 100)
     
-    # 2. Calculate the raw amount of foreign currency you can buy
-    total_currency = budget / actual_rate
+    total_new_currency = budget / actual_rate
     
-    # 3. Floor divide by denomination to get total bills, then scale back
-    max_value = (total_currency // denomination) * denomination
+    number_of_denominations = int(total_new_currency // denomination)
     
-    return int(max_value)
+    return number_of_denominations * denomination
