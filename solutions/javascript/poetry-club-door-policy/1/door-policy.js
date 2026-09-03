@@ -21,7 +21,7 @@ export function frontDoorResponse(line) {
  */
 export function frontDoorPassword(word) {
   const trimmedWord = word.trim();
-  return `${trimmedWord[0].toUpperCase()}${trimmedWord.substring(1).toLowerCase()}`;
+  return `${trimmedWord[0].toUpperCase()}${trimmedWord.substr(1).toLowerCase()}`;
 }
 
 /**
