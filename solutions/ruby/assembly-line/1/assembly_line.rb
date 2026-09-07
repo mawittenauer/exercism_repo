@@ -4,15 +4,15 @@ class AssemblyLine
   end
 
   def production_rate_per_hour
-    norm_rate = @speed * 221
+    perfect_rate = @speed * 221
     if @speed < 5
-      norm_rate
+      perfect_rate
     elsif @speed < 9
-      norm_rate * 0.9
+      perfect_rate * 0.9
     elsif @speed < 10
-      norm_rate * 0.8
+      perfect_rate * 0.8
     else
-      norm_rate * 0.77
+      perfect_rate * 0.77
     end
   end
 
