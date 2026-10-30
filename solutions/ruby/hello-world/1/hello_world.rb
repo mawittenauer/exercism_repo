@@ -1,4 +1,4 @@
-module HelloWorld
+class HelloWorld
   def self.hello
     "Hello, World!"
   end
