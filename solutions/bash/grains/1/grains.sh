@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
-square=$1
-rice=1
-
-if [[ "$square" == "total" ]]; then
+if [ "$1" == "total" ]; then
     echo "18446744073709551615"
     exit 0
 fi
 
-if [[ $square -lt 1 || $square -gt 64 ]]; then
+if [[ $1 -gt 64 || $1 -lt 1 ]]; then
     echo "Error: invalid input"
     exit 1
 fi
 
-if [[ "$square" == "64" ]]; then
+if [ "$1" == "64" ]; then
     echo "9223372036854775808"
     exit 0
 fi
 
+square=$1
+grains=1
+
 for ((i=1; i<square; i++)); do
-    rice=$((rice*2))
+    grains=$((grains*2));
 done
 
-echo "$rice"
+echo "$grains"
